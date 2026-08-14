@@ -9,7 +9,7 @@ import { motion, AnimatePresence } from "motion/react";
 interface GalleryItem {
   id?: string;
   url: string;
-  title: string;
+  title?: string;
   caption: string;
   category: string;
   location?: string;
@@ -84,7 +84,7 @@ function GalleryTiltCard({
       <div className="relative h-72 w-full overflow-hidden rounded-[1.6rem] bg-slate-950">
         <Image
           src={image.url}
-          alt={image.title}
+          alt={image.caption}
           fill
           priority={index < 4}
           sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
@@ -116,7 +116,7 @@ function GalleryTiltCard({
 
         {/* Bottom Details Bar */}
         <div className="absolute bottom-0 left-0 right-0 z-10 p-4 sm:p-5">
-          <div className="flex items-center gap-3 text-[10px] text-slate-400 font-medium mb-1.5">
+          <div className="flex items-center gap-3 text-[10px] text-slate-400 font-medium mb-2">
             {image.location && (
               <span className="flex items-center gap-1">
                 <MapPin className="h-3 w-3 text-sky-400" />
@@ -131,11 +131,7 @@ function GalleryTiltCard({
             )}
           </div>
 
-          <h3 className="text-base sm:text-lg font-bold text-white group-hover:text-sky-300 transition-colors line-clamp-1">
-            {image.title}
-          </h3>
-
-          <p className="mt-1 line-clamp-2 text-xs text-slate-300 leading-relaxed">
+          <p className="text-xs sm:text-sm text-slate-200 leading-relaxed">
             {image.caption}
           </p>
         </div>
@@ -289,7 +285,7 @@ export function CourseGalleryLightbox() {
               <div className="relative h-[55vh] w-[88vw] max-w-4xl sm:h-[65vh]">
                 <Image
                   src={filteredImages[selectedImageIndex].url}
-                  alt={filteredImages[selectedImageIndex].title}
+                  alt={filteredImages[selectedImageIndex].caption}
                   fill
                   className="object-contain"
                   priority
@@ -300,7 +296,7 @@ export function CourseGalleryLightbox() {
               <div className="border-t border-slate-800/90 bg-slate-950/95 p-5 sm:p-6 rounded-b-[2.3rem]">
                 <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4">
                   <div>
-                    <div className="flex items-center gap-2 mb-1.5">
+                    <div className="flex items-center gap-2 mb-2">
                       <span className="rounded-full bg-sky-500/20 border border-sky-500/30 px-3 py-0.5 text-[11px] font-bold uppercase tracking-wider text-sky-300">
                         {filteredImages[selectedImageIndex].category}
                       </span>
@@ -311,10 +307,7 @@ export function CourseGalleryLightbox() {
                         </span>
                       )}
                     </div>
-                    <h4 className="text-lg sm:text-xl font-bold text-white">
-                      {filteredImages[selectedImageIndex].title}
-                    </h4>
-                    <p className="mt-1 text-xs sm:text-sm text-slate-300 leading-relaxed">
+                    <p className="text-sm sm:text-base text-slate-200 leading-relaxed">
                       {filteredImages[selectedImageIndex].caption}
                     </p>
                   </div>

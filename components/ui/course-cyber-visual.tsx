@@ -47,24 +47,24 @@ export function CourseCyberVisual({ courseId }: CourseCyberVisualProps) {
             "  if <touching [obstacle]?>",
             "  play sound (victory_fanfare);"
           ],
-          tags: ["Arcade", "Physics", "Stories"]
+          tags: ["Arcade", "Stories", "Game Logic"]
         };
       case "csharp-unity-game-dev":
         return {
-          badge: "UNITY 6 • C# SCRIPTING",
+          badge: "C# GAME DEV",
           icon: Cpu,
           accentColor: "from-emerald-400 via-teal-500 to-cyan-600",
           glowColor: "rgba(45, 212, 191, 0.25)",
           borderColor: "border-teal-500/40",
           textColor: "text-teal-300",
-          terminalPrompt: "UnityEngine.Physics.Simulate()",
+          terminalPrompt: "GameObject.FindObjectOfType<PlayerScript>()",
           codeLines: [
             "public class PlayerController : MonoBehaviour {",
             "  [SerializeField] float speed = 12f;",
             "  void Update() { MovePlayer(); }",
             "}"
           ],
-          tags: ["3D Physics", "Shaders", "Steam"]
+          tags: ["Game Development", "Scripting", "Interactive"]
         };
       case "web-development-frontend":
       default:

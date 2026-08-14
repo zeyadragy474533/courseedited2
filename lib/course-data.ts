@@ -4,7 +4,6 @@ export const novaCourseGallery = [
   {
     id: "gal-1",
     url: "/images/494224138_122149925132493821_3546896229289509441_n.jpg",
-    title: "معسكر C++ وتطبيقات الذاكرة الحية | Hands-on Coding",
     caption: "جلسات تدريب حية وتطبيق مباشر على لغة C++ ومؤشرات الذاكرة Pointers مع مراجعة الكود سطر بسطر مع المدربين.",
     category: "Coding",
     location: "Nova Tech Hub - المعادي",
@@ -14,7 +13,6 @@ export const novaCourseGallery = [
   {
     id: "gal-2",
     url: "/images/494451460_122149925342493821_6671575989079097046_n.jpg",
-    title: "العمل الجماعي وبناء منطق الألعاب | Team Logic & Games",
     caption: "تفاعل الطلاب وتطبيق التفكير الخوارزمي في بيئة عمل تشاركية ملهمة لبناء ألعاب حقيقية ونظم ذكية.",
     category: "Workshop",
     location: "Nova Innovation Lab",
@@ -24,7 +22,6 @@ export const novaCourseGallery = [
   {
     id: "gal-3",
     url: "/images/494524007_122149925024493821_2936548654072642787_n.jpg",
-    title: "التوجيه الفردي والإرشاد التقني | 1:1 Mentorship",
     caption: "متابعة شخصية مستمرة مع كل طالب ومراجعة دقيقة للأداء لضمان الاستيعاب الكامل والاحتراف البرمجي.",
     category: "Mentorship",
     location: "Nova Cairo Campus",
@@ -34,7 +31,6 @@ export const novaCourseGallery = [
   {
     id: "gal-4",
     url: "/images/494700826_122149925294493821_360724527126655574_n.jpg",
-    title: "عرض ومناقشة مشاريع التخرج | Capstone Showcase",
     caption: "الطلاب يشرحون خوارزميات مشاريعهم البرمجية وألعابهم المكتملة أمام لجنة التحكيم وزملائهم بثقة عالية.",
     category: "Projects",
     location: "Nova Demo Day",
@@ -44,7 +40,6 @@ export const novaCourseGallery = [
   {
     id: "gal-5",
     url: "/images/494730697_122149925192493821_2019700793460155445_n.jpg",
-    title: "صناع المستقبل والجيل البرمجي | Future Coders",
     caption: "أجواء الحماس والشغف بين أبطال Nova Technology وبناء صداقات تقنية تدوم مدى الحياة في بيئة تعليمية مميزة.",
     category: "Community",
     location: "Nova Community Arena",
@@ -54,7 +49,6 @@ export const novaCourseGallery = [
   {
     id: "gal-6",
     url: "/images/495024945_122149925408493821_6389513914891642268_n.jpg",
-    title: "حفل التكريم والشهادات المعتمدة | Certification",
     caption: "تسليم شهادات إتمام المعسكر التدريبي وتكريم الطلاب أصحاب المشاريع الأفضل والمبتكرة في الحفل السنوي.",
     category: "Awards",
     location: "Nova Annual Gala",
@@ -122,8 +116,8 @@ export const allCourses: Course[] = [
     reviewsCount: 342,
     studentsCount: 1250,
     duration: "8 أسابيع (48 ساعة تدريب)",
-    price: 299,
-    originalPrice: 450,
+    price: 1000,
+    originalPrice: 1200,
     lessonsCount: 24,
     coverImage: "/images/494224138_122149925132493821_3546896229289509441_n.jpg",
     featured: true,
@@ -134,7 +128,6 @@ export const allCourses: Course[] = [
       "جلسات حل مسائل برمجية Problem Solving & Codeforces",
       "تطبيق عملي لمفاهيم البرمجة كائنية التوجه (OOP)",
       "شهادة معتمدة من Nova Technology ومراجعة كود فردية",
-      "دعم مستمر وإرشاد تقني عبر مجتمع ديسكورد وتليجرام الخاص",
       "بناء مشروع تخرج متكامل (Game Engine / Inventory System)"
     ],
     description:
@@ -274,8 +267,8 @@ export const allCourses: Course[] = [
     reviewsCount: 188,
     studentsCount: 820,
     duration: "6 أسابيع (24 ساعة تدريب)",
-    price: 180,
-    originalPrice: 280,
+    price: 800,
+    originalPrice: 1000,
     lessonsCount: 16,
     coverImage: "/images/494451460_122149925342493821_6671575989079097046_n.jpg",
     featured: true,
@@ -344,8 +337,8 @@ export const allCourses: Course[] = [
     reviewsCount: 210,
     studentsCount: 640,
     duration: "10 أسابيع (60 ساعة تدريب)",
-    price: 349,
-    originalPrice: 500,
+    price: 2500,
+    originalPrice: 3000,
     lessonsCount: 28,
     coverImage: "/images/494524007_122149925024493821_2936548654072642787_n.jpg",
     featured: false,
@@ -395,8 +388,8 @@ export const allCourses: Course[] = [
     reviewsCount: 295,
     studentsCount: 980,
     duration: "8 أسابيع (40 ساعة تدريب)",
-    price: 249,
-    originalPrice: 380,
+    price: 2200,
+    originalPrice: 2800,
     lessonsCount: 20,
     coverImage: "/images/494700826_122149925294493821_360724527126655574_n.jpg",
     featured: false,
@@ -486,10 +479,9 @@ export const studentReviews = [
 ];
 
 export const platformStats = [
-  { number: "+1,250", label: "طالب خريج", sub: "Graduated Students", icon: "Users" },
+  { number: "40", label: "طالب خريج", sub: "Graduated Students", icon: "Users" },
   { number: "98%", label: "نسبة الرضا والنجاح", sub: "Satisfaction Rate", icon: "Award" },
-  { number: "+85", label: "مشروع عملي تخرج", sub: "Real Capstone Projects", icon: "Code2" },
-  { number: "24/7", label: "دعم فني ومجتمع نشط", sub: "Active Tech Community", icon: "Sparkles" }
+  { number: "3+", label: "مشروع عملي تخرج", sub: "Real Capstone Projects", icon: "Code2" }
 ];
 
 export const faqItems = [

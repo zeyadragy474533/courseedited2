@@ -98,7 +98,7 @@ export function SiteHeader() {
               className="relative group flex items-center gap-1.5 overflow-hidden rounded-full bg-gradient-to-r from-sky-500 to-blue-600 px-5 py-2.5 text-xs font-extrabold text-white shadow-lg shadow-sky-500/25 transition-all hover:scale-105 hover:shadow-sky-500/40 active:scale-95"
             >
               <Sparkles className="h-3.5 w-3.5 fill-current" />
-              <span>انضم الآن 🚀</span>
+              <span>تسجيل دخول</span>
             </button>
 
             {/* Mobile Menu Trigger */}

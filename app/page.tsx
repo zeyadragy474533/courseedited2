@@ -169,7 +169,7 @@ export default function Home() {
               </div>
               <h3 className="text-base font-bold text-white mb-1.5">متابعة شخصية مستمرة 1:1</h3>
               <p className="text-xs sm:text-sm leading-relaxed text-slate-300">
-                جروبات دعم فني خاصة ومراجعة حية لكل كود بتكتبه مع اقتراح التحسينات وأفضل الممارسات (Clean Code).
+                مراجعة حية لكل كود بتكتبه مع اقتراح التحسينات وأفضل الممارسات (Clean Code) والتطبيق العملي المباشر.
               </p>
             </motion.div>
           </div>
@@ -204,10 +204,31 @@ export default function Home() {
               المقاعد محدودة جداً في كل دفعة لضمان المتابعة الفردية الدقيقة مع كل طالب. احجز مكانك الآن واستفد من خصم الـ 20%!
             </p>
 
-            <div className="mt-7 flex flex-wrap items-center justify-center gap-3.5">
+            <div className="mt-7 flex flex-col items-center justify-center gap-3.5">
+              <div className="w-full max-w-lg">
+                <label htmlFor="cta-course-select" className="mb-2 block text-left text-xs font-bold uppercase tracking-[0.2em] text-sky-300">
+                  اختر الكورس الذي تريد التسجيل فيه
+                </label>
+                <select
+                  id="cta-course-select"
+                  value={selectedCourseForEnroll.id}
+                  onChange={(e) => {
+                    const chosenCourse = allCourses.find((course) => course.id === e.target.value) ?? novaCourse;
+                    setSelectedCourseForEnroll(chosenCourse);
+                  }}
+                  className="w-full rounded-2xl border border-sky-500/30 bg-slate-950/80 px-4 py-3 text-sm font-medium text-white shadow-lg shadow-sky-950/30 outline-none ring-0 transition-all focus:border-sky-400"
+                >
+                  {allCourses.map((course) => (
+                    <option key={course.id} value={course.id} className="bg-slate-900 text-white">
+                      {course.titleAr}
+                    </option>
+                  ))}
+                </select>
+              </div>
+
               <button
                 type="button"
-                onClick={() => handleEnrollClick(novaCourse)}
+                onClick={() => setIsEnrollModalOpen(true)}
                 className="flex items-center gap-2 rounded-full bg-gradient-to-r from-sky-400 via-blue-500 to-indigo-600 px-8 py-3.5 text-sm sm:text-base font-black text-white shadow-xl shadow-sky-500/40 hover:scale-105 active:scale-95 transition-all"
               >
                 <Sparkles className="h-5 w-5" />
@@ -226,7 +247,7 @@ export default function Home() {
               </div>
               <div className="flex items-center gap-1.5">
                 <Check className="h-4 w-4 text-emerald-400" />
-                <span>دعم فني وتوجيه مهني مستمر</span>
+                <span>ألعاب وتطبيقات حقيقية مع كل دورة</span>
               </div>
             </div>
           </div>

@@ -174,7 +174,7 @@ export function ProjectShowcase() {
                 <div className="lg:col-span-6 space-y-4">
                   <div className="inline-flex items-center gap-2 rounded-lg bg-sky-500/10 px-3 py-1 text-xs font-bold text-sky-400 border border-sky-500/20">
                     <Gamepad2 className="h-4 w-4" />
-                    <span>مشروع برمجة محرك ألعاب C++ & Unity 6</span>
+                    <span>مشروع برمجة محرك ألعاب C++</span>
                   </div>
                   <h3 className="text-2xl font-black text-white">
                     صناعة ألعاب من الصفر مع فيزياء الـ Collision والـ Particle Systems
@@ -275,7 +275,7 @@ export function ProjectShowcase() {
                 <div className="lg:col-span-6 space-y-4">
                   <div className="inline-flex items-center gap-2 rounded-lg bg-emerald-500/10 px-3 py-1 text-xs font-bold text-emerald-400 border border-emerald-500/20">
                     <Cpu className="h-4 w-4" />
-                    <span>التحكم الاحترافي بالـ RAM & Pointers</span>
+                    <span>فهم إدارة الذاكرة والمؤشرات</span>
                   </div>
                   <h3 className="text-2xl font-black text-white">
                     محاكي حجز الذاكرة المباشر (Stack vs. Heap Memory)

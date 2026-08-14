@@ -3,20 +3,13 @@
 import { useState } from "react";
 import Image from "next/image";
 import Link from "next/link";
-import { novaCourse, novaLogo, platformStats } from "@/lib/course-data";
-import { Sparkles, Flame, CheckCircle2, ArrowLeft, Users, Award, Code2, Cpu, Gamepad2, Star, Zap } from "lucide-react";
+import { novaCourse, novaLogo } from "@/lib/course-data";
+import { Sparkles, Flame, CheckCircle2, ArrowLeft, Cpu, Gamepad2, Star, Zap } from "lucide-react";
 import { EnrollmentModal } from "@/components/ui/enrollment-modal";
 
 export function AnimatedHero() {
   const [isEnrollOpen, setIsEnrollOpen] = useState(false);
   const [activeTab, setActiveTab] = useState<"visual" | "code">("visual");
-
-  const statIcons = {
-    Users: <Users className="h-5 w-5 text-sky-400" />,
-    Award: <Award className="h-5 w-5 text-amber-400" />,
-    Code2: <Code2 className="h-5 w-5 text-emerald-400" />,
-    Sparkles: <Sparkles className="h-5 w-5 text-purple-400" />
-  };
 
   return (
     <section className="relative overflow-hidden bg-gradient-to-b from-slate-950 via-slate-900/60 to-slate-950 pt-3 pb-10 sm:pt-6 sm:pb-14 border-b border-slate-800/80">
@@ -136,7 +129,7 @@ export function AnimatedHero() {
                   </div>
                 </div>
                 <div className="text-xs text-slate-300 font-medium">
-                  انضم إلى أكثر من <strong className="text-white">1,200+ طالب</strong> تم تدريبهم بنجاح
+                  تسجيل دخول إلى أكثر من <strong className="text-white">1,200+ طالب</strong> تم تدريبهم بنجاح
                 </div>
               </div>
 
@@ -162,8 +155,8 @@ export function AnimatedHero() {
             <div className="absolute -bottom-4 -right-3 z-20 flex items-center gap-2 rounded-2xl border border-amber-400/50 bg-slate-950/95 px-3 py-2 shadow-xl shadow-amber-950/60 backdrop-blur-xl">
               <Gamepad2 className="h-4 w-4 text-amber-400" />
               <div>
-                <div className="text-[10px] font-bold uppercase text-amber-400">Game Engine</div>
-                <div className="text-xs font-bold text-white">Unity 6 & C# Physics</div>
+                <div className="text-[10px] font-bold uppercase text-amber-400">Live Sandbox</div>
+                <div className="text-xs font-bold text-white">C++ Interactive Demo</div>
               </div>
             </div>
 
@@ -262,22 +255,7 @@ export function AnimatedHero() {
           </div>
         </div>
 
-        {/* 4 Stats Cards Bar */}
-        <div className="mt-8 grid grid-cols-2 gap-3 sm:grid-cols-4 lg:mt-10">
-          {platformStats.map((stat) => (
-            <div
-              key={stat.label}
-              className="rounded-2xl border border-slate-800/90 bg-slate-900/80 p-4 text-center shadow-lg shadow-slate-950/40 backdrop-blur-xl transition-all hover:border-sky-500/50 hover:-translate-y-1"
-            >
-              <div className="mx-auto flex h-9 w-9 items-center justify-center rounded-xl bg-slate-800/80 border border-slate-700/60 mb-2">
-                {statIcons[stat.icon as keyof typeof statIcons] || <Sparkles className="h-4 w-4 text-sky-400" />}
-              </div>
-              <div className="text-xl sm:text-2xl font-black text-white">{stat.number}</div>
-              <div className="mt-0.5 text-xs font-bold text-sky-300">{stat.label}</div>
-              <div className="text-[10px] text-slate-400">{stat.sub}</div>
-            </div>
-          ))}
-        </div>
+
       </div>
 
       {/* Enrollment Modal */}

@@ -79,139 +79,6 @@ int main() {
       { address: "0x7FFF08", name: "skills.size()", val: "4" },
       { address: "0x7FFF10", name: "skills.capacity()", val: "4" }
     ]
-  },
-  {
-    id: "pointers",
-    name: "2. المؤشرات والذاكرة (Pointers & RAM)",
-    lang: "C++23",
-    code: `#include <iostream>
-
-void doublePower(int* valuePtr) {
-    // التعديل المباشر على عنوان الذاكرة في الـ RAM
-    *valuePtr = (*valuePtr) * 2;
-}
-
-int main() {
-    int heroPower = 500;
-    std::cout << "🔹 طاقة البطل الأولية: " << heroPower << std::endl;
-    std::cout << "📍 عنوان الذاكرة: " << &heroPower << std::endl;
-    
-    doublePower(&heroPower);
-    
-    std::cout << "💥 بعد مضاعفة الطاقة عبر Pointer: " << heroPower << std::endl;
-    return 0;
-}`,
-    executionSteps: [
-      {
-        line: 9,
-        delay: 500,
-        memoryState: [
-          { address: "0x7FFD_E1C4", varName: "heroPower", value: "500", type: "int (4 bytes)" }
-        ],
-        outputChunk: "🔹 طاقة البطل الأولية: 500\n",
-        logMessage: "Allocated int heroPower at stack address 0x7ffd_e1c4"
-      },
-      {
-        line: 10,
-        delay: 450,
-        outputChunk: "📍 عنوان الذاكرة في الـ RAM: 0x7ffd_e1c4\n",
-        logMessage: "Read memory address pointer reference &heroPower"
-      },
-      {
-        line: 12,
-        delay: 600,
-        memoryState: [
-          { address: "0x7FFD_E1C4", varName: "heroPower", value: "1000", type: "int (DEREFERENCED)" },
-          { address: "0x7FFD_E008", varName: "valuePtr", value: "0x7FFD_E1C4", type: "int*" }
-        ],
-        outputChunk: "⚡ جاري التعديل المباشر في الـ RAM via Pointer...\n",
-        logMessage: "Dereferencing *valuePtr and assigning 500 * 2 = 1000"
-      },
-      {
-        line: 14,
-        delay: 450,
-        outputChunk: "💥 بعد مضاعفة الطاقة عبر Pointer: 1000\n\n[Process completed with exit code 0 in 0.0012ms]",
-        logMessage: "Memory modified in-place with zero overhead!"
-      }
-    ],
-    explanation: "تطبيق حقيقي يوضح كيف يتم تعديل المتغيرات مباشرة في عناوين الـ RAM دون الحاجة لنسخ البيانات في الذاكرة.",
-    memoryDiagram: [
-      { address: "0x7FFD_E1C4", name: "heroPower", val: "1000 (int)" },
-      { address: "0x7FFD_E008", name: "valuePtr", val: "-> 0x7FFD_E1C4" }
-    ]
-  },
-  {
-    id: "oop",
-    name: "3. كائنات الروبوت (OOP & Robot Class)",
-    lang: "C++23",
-    code: `#include <iostream>
-#include <string>
-
-class NovaRobot {
-private:
-    std::string name;
-    int battery = 100;
-
-public:
-    NovaRobot(std::string n) : name(n) {}
-
-    void executeTask(std::string task) {
-        battery -= 20;
-        std::cout << "🤖 " << name << " يُنفذ: [" << task << "] | البطارية: " << battery << "%" << std::endl;
-    }
-};
-
-int main() {
-    NovaRobot bot("Nova-Prime");
-    bot.executeTask("فحص أمان النظام");
-    bot.executeTask("تجميع كود C++ الحصري");
-    bot.executeTask("إطلاق مشروع التخرج");
-    return 0;
-}`,
-    executionSteps: [
-      {
-        line: 17,
-        delay: 500,
-        memoryState: [
-          { address: "0x8F00_0010", varName: "bot.name", value: "\"Nova-Prime\"", type: "std::string" },
-          { address: "0x8F00_0038", varName: "bot.battery", value: "100", type: "int" }
-        ],
-        outputChunk: "🛡️ تم تهيئة كائن NovaRobot في الذاكرة بنجاح...\n",
-        logMessage: "Constructor NovaRobot::NovaRobot(\"Nova-Prime\") executed"
-      },
-      {
-        line: 18,
-        delay: 450,
-        memoryState: [
-          { address: "0x8F00_0038", varName: "bot.battery", value: "80", type: "int" }
-        ],
-        outputChunk: "🤖 Nova-Prime يُنفذ: [فحص أمان النظام] | البطارية: 80%\n",
-        logMessage: "Method executeTask(\"فحص أمان النظام\") executed"
-      },
-      {
-        line: 19,
-        delay: 450,
-        memoryState: [
-          { address: "0x8F00_0038", varName: "bot.battery", value: "60", type: "int" }
-        ],
-        outputChunk: "🤖 Nova-Prime يُنفذ: [تجميع كود C++ الحصري] | البطارية: 60%\n",
-        logMessage: "Method executeTask(\"تجميع كود C++\") executed"
-      },
-      {
-        line: 20,
-        delay: 450,
-        memoryState: [
-          { address: "0x8F00_0038", varName: "bot.battery", value: "40", type: "int" }
-        ],
-        outputChunk: "🤖 Nova-Prime يُنفذ: [إطلاق مشروع التخرج] | البطارية: 40%\n\n[Process completed with exit code 0 in 0.0028ms]",
-        logMessage: "Object lifecycle managed safely without memory leaks"
-      }
-    ],
-    explanation: "تطبيق لمفاهيم البرمجة كائنية التوجه (OOP)، Encapsulation، وحماية البيانات داخل الـ Class.",
-    memoryDiagram: [
-      { address: "0x8F00_0010", name: "bot.name", val: "\"Nova-Prime\"" },
-      { address: "0x8F00_0038", name: "bot.battery", val: "40%" }
-    ]
   }
 ];
 
@@ -220,14 +87,10 @@ export function InteractiveCodeRunner() {
   const [code, setCode] = useState(PRESETS[0].code);
   const [isRunning, setIsRunning] = useState(false);
   const [activeExecutingLine, setActiveExecutingLine] = useState<number | null>(null);
-  const [displayedOutput, setDisplayedOutput] = useState<string>(() => {
-    return PRESETS[0].executionSteps.map((s) => s.outputChunk).join("");
-  });
-  const [liveMemory, setLiveMemory] = useState<{ address: string; varName: string; value: string; type: string }[]>(() => {
-    return PRESETS[0].executionSteps[1]?.memoryState || [];
-  });
+  const [displayedOutput, setDisplayedOutput] = useState<string>("");
+  const [liveMemory, setLiveMemory] = useState<{ address: string; varName: string; value: string; type: string }[]>([]);
   const [copied, setCopied] = useState(false);
-  const [terminalTab, setTerminalTab] = useState<"terminal" | "memory" | "explanation">("terminal");
+  const [terminalTab, setTerminalTab] = useState<"terminal">("terminal");
   const [executionLog, setExecutionLog] = useState<string>("Ready to execute");
 
   const handleSelectPreset = (preset: CodePreset) => {
@@ -235,8 +98,8 @@ export function InteractiveCodeRunner() {
     setSelectedPreset(preset);
     setCode(preset.code);
     setActiveExecutingLine(null);
-    setDisplayedOutput(preset.executionSteps.map((s) => s.outputChunk).join(""));
-    setLiveMemory(preset.executionSteps[1]?.memoryState || []);
+    setDisplayedOutput("");
+    setLiveMemory([]);
     setExecutionLog("Preset loaded. Click Run to execute.");
   };
 
@@ -279,11 +142,9 @@ export function InteractiveCodeRunner() {
     if (isRunning) return;
     setCode(selectedPreset.code);
     setActiveExecutingLine(null);
-    let initialText = "";
-    selectedPreset.executionSteps.forEach((s) => {
-      initialText += s.outputChunk;
-    });
-    setDisplayedOutput(initialText);
+    setDisplayedOutput("");
+    setLiveMemory([]);
+    setExecutionLog("Ready to execute");
   };
 
   const handleCopy = () => {
@@ -421,42 +282,12 @@ export function InteractiveCodeRunner() {
 
         {/* Right Col: Terminal & Memory Visualizer */}
         <div className="flex flex-col bg-slate-950/90 lg:col-span-5">
-          {/* Tabs for Terminal vs Memory RAM vs Explanation */}
           <div className="flex items-center justify-between border-b border-slate-800/70 bg-slate-900/80 px-4 py-2 text-xs">
             <div className="flex gap-1.5">
-              <button
-                onClick={() => setTerminalTab("terminal")}
-                className={`flex items-center gap-1.5 rounded-lg px-3 py-1.5 font-bold transition-all ${
-                  terminalTab === "terminal"
-                    ? "bg-sky-500/20 text-sky-300 border border-sky-500/40 shadow-sm"
-                    : "text-slate-400 hover:text-white"
-                }`}
-              >
+              <div className={`flex items-center gap-1.5 rounded-lg px-3 py-1.5 font-bold transition-all bg-sky-500/20 text-sky-300 border border-sky-500/40 shadow-sm`}>
                 <Terminal className="h-3.5 w-3.5" />
                 <span>الطرفية (Terminal)</span>
-              </button>
-              <button
-                onClick={() => setTerminalTab("memory")}
-                className={`flex items-center gap-1.5 rounded-lg px-3 py-1.5 font-bold transition-all ${
-                  terminalTab === "memory"
-                    ? "bg-sky-500/20 text-sky-300 border border-sky-500/40 shadow-sm"
-                    : "text-slate-400 hover:text-white"
-                }`}
-              >
-                <Cpu className="h-3.5 w-3.5" />
-                <span>الذاكرة (RAM)</span>
-              </button>
-              <button
-                onClick={() => setTerminalTab("explanation")}
-                className={`flex items-center gap-1.5 rounded-lg px-3 py-1.5 font-bold transition-all ${
-                  terminalTab === "explanation"
-                    ? "bg-sky-500/20 text-sky-300 border border-sky-500/40 shadow-sm"
-                    : "text-slate-400 hover:text-white"
-                }`}
-              >
-                <Sparkles className="h-3.5 w-3.5" />
-                <span>الشرح</span>
-              </button>
+              </div>
             </div>
 
             <div className="flex items-center gap-1.5">
@@ -467,108 +298,32 @@ export function InteractiveCodeRunner() {
             </div>
           </div>
 
-          {/* Tab Views */}
           <div className="flex-1 p-3 font-mono text-xs">
-            {terminalTab === "terminal" && (
-              <div className="relative h-[290px] sm:h-[330px] overflow-y-auto rounded-2xl bg-slate-950 p-4 border border-slate-800 shadow-inner flex flex-col justify-between">
-                <div>
-                  <div className="flex items-center justify-between pb-2 mb-2 border-b border-slate-900 text-[10px] text-slate-500">
-                    <span>bash /nova_runtime/cplusplus</span>
-                    <span>stdout / UTF-8</span>
-                  </div>
-                  <pre className="whitespace-pre-wrap leading-relaxed text-emerald-400 font-mono text-xs sm:text-sm selection:bg-emerald-500/30">
-                    {displayedOutput || (
-                      <span className="text-slate-600">
-                        {"// اضغط على زر \"تشغيل الكود الآن\" لرؤية التنفيذ اللحظي سطر بسطر..."}
-                      </span>
-                    )}
-                  </pre>
-                  {isRunning && (
-                    <span className="inline-block h-3.5 w-2 bg-emerald-400 animate-pulse ml-1 align-middle" />
+            <div className="relative h-[290px] sm:h-[330px] overflow-y-auto rounded-2xl bg-slate-950 p-4 border border-slate-800 shadow-inner flex flex-col justify-between">
+              <div>
+                <div className="flex items-center justify-between pb-2 mb-2 border-b border-slate-900 text-[10px] text-slate-500">
+                  <span>bash /nova_runtime/cplusplus</span>
+                  <span>stdout / UTF-8</span>
+                </div>
+                <pre className="whitespace-pre-wrap leading-relaxed text-emerald-400 font-mono text-xs sm:text-sm selection:bg-emerald-500/30">
+                  {displayedOutput || (
+                    <span className="text-slate-600">
+                      {"// اضغط على زر \"تشغيل الكود الآن\" لرؤية التنفيذ اللحظي سطر بسطر..."}
+                    </span>
                   )}
-                </div>
-
-                <div className="pt-2 border-t border-slate-900/80 flex items-center justify-between text-[10px] text-slate-500">
-                  <span className="flex items-center gap-1">
-                    <Zap className="h-3 w-3 text-amber-400" />
-                    Speed: 0.0019ms
-                  </span>
-                  <span className="text-sky-400">Nova Code Engine v4.2</span>
-                </div>
+                </pre>
+                {isRunning && (
+                  <span className="inline-block h-3.5 w-2 bg-emerald-400 animate-pulse ml-1 align-middle" />
+                )}
               </div>
-            )}
 
-            {terminalTab === "memory" && (
-              <div className="h-[290px] sm:h-[330px] overflow-y-auto rounded-2xl bg-slate-900/90 p-4 border border-slate-800 space-y-3">
-                <div className="flex items-center justify-between">
-                  <h4 className="font-bold text-xs text-white flex items-center gap-1.5">
-                    <Cpu className="h-4 w-4 text-sky-400" />
-                    خريطة الذاكرة الحية (RAM Memory Layout)
-                  </h4>
-                  <span className="text-[10px] text-emerald-400 font-bold bg-emerald-950/80 px-2 py-0.5 rounded border border-emerald-500/30">
-                    STACK & HEAP
-                  </span>
-                </div>
-
-                <p className="text-[11px] text-slate-400 leading-relaxed">
-                  تتبع مباشر لكيفية حجز المتغيرات والعناوين بالذاكرة في لغة C++:
-                </p>
-
-                <div className="space-y-2">
-                  {liveMemory.length > 0 ? (
-                    liveMemory.map((mem, idx) => (
-                      <motion.div
-                        key={idx}
-                        initial={{ opacity: 0, x: -10 }}
-                        animate={{ opacity: 1, x: 0 }}
-                        className="rounded-xl border border-sky-500/30 bg-slate-950 p-2.5 flex items-center justify-between text-[11px]"
-                      >
-                        <div>
-                          <span className="font-mono text-sky-400 font-bold">{mem.address}</span>
-                          <span className="mx-2 text-slate-600">|</span>
-                          <span className="text-white font-bold">{mem.varName}</span>
-                          <span className="ml-2 text-[10px] text-slate-400">({mem.type})</span>
-                        </div>
-                        <div className="rounded bg-sky-500/20 px-2 py-0.5 font-bold text-emerald-400 border border-sky-500/30">
-                          {mem.value}
-                        </div>
-                      </motion.div>
-                    ))
-                  ) : (
-                    <div className="rounded-xl border border-slate-800 bg-slate-950 p-4 text-center text-slate-500 text-xs">
-                      اضغط على &quot;تشغيل الكود&quot; لمشاهدة حركة وتخصيص الذاكرة الحية!
-                    </div>
-                  )}
-                </div>
-
-                <div className="rounded-xl bg-slate-950/70 p-2.5 border border-slate-800 text-[10px] text-slate-400 flex items-center justify-between">
-                  <span>Stack Pointer: 0x7FFF_E000</span>
-                  <span>Heap Allocations: 0 Leaks ✓</span>
-                </div>
+              <div className="pt-2 border-t border-slate-900/80 flex items-center justify-between text-[10px] text-slate-500">
+                <span className="flex items-center gap-1">
+                  {(isRunning || displayedOutput.length > 0) && <><Zap className="h-3 w-3 text-amber-400" /> Speed: 0.0019ms</>}
+                </span>
+                <span className="text-sky-400">Nova Code Engine v4.2</span>
               </div>
-            )}
-
-            {terminalTab === "explanation" && (
-              <div className="h-[290px] sm:h-[330px] overflow-y-auto rounded-2xl bg-slate-900/90 p-4 border border-slate-800 space-y-3">
-                <h4 className="text-sm font-bold text-white flex items-center gap-2">
-                  <span className="h-2 w-2 rounded-full bg-sky-400" />
-                  {selectedPreset.name}
-                </h4>
-                <p className="text-xs leading-relaxed text-slate-300">
-                  {selectedPreset.explanation}
-                </p>
-
-                <div className="rounded-xl bg-sky-950/70 p-3.5 border border-sky-800/60 text-sky-200 text-xs leading-relaxed space-y-1.5">
-                  <div className="font-bold text-sky-300 flex items-center gap-1.5">
-                    <Sparkles className="h-3.5 w-3.5 text-amber-400" />
-                    لماذا نركز على C++ في Nova Technology؟
-                  </div>
-                  <p className="text-slate-300 text-[11px]">
-                    لأنها لغة محركات الألعاب (Unreal Engine)، والأنظمة فائقة السرعة، والذكاء الاصطناعي. من يفهم C++ يصبح قادراً على تعلم أي لغة برمجة أخرى خلال أيام قليلة!
-                  </p>
-                </div>
-              </div>
-            )}
+            </div>
           </div>
         </div>
       </div>

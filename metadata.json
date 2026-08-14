@@ -1,0 +1,8 @@
+{
+  "name": "Remix coursehub",
+  "description": "Imported from GitHub: zeyadragy474533/coursehub",
+  "requestFramePermissions": [],
+  "majorCapabilities": [
+    "MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"
+  ]
+}

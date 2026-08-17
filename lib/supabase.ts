@@ -5,12 +5,13 @@ const supabaseUrl = process.env.NEXT_PUBLIC_SUPABASE_URL || "https://ycznwibfasy
 const supabaseKey =
   process.env.NEXT_PUBLIC_SUPABASE_PUBLISHABLE_KEY ||
   process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY ||
-  "";
+  "public-anon-key";
 
 export const isSupabaseConfigured = (): boolean => {
   return Boolean(
     supabaseUrl &&
     supabaseKey &&
+    supabaseKey !== "public-anon-key" &&
     supabaseUrl.startsWith("http") &&
     !supabaseUrl.includes("your-project")
   );

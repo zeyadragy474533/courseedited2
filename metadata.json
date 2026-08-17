@@ -1,6 +1,6 @@
 {
-  "name": "Remix coursehub",
-  "description": "Imported from GitHub: zeyadragy474533/coursehub",
+  "name": "Nova Technology",
+  "description": "منصة وأكاديمية Nova Technology لتعليم لغات البرمجة C++ و Scratch والتدريب العملي على المشاريع وإدارة الذاكرة والتفكير المنطقي",
   "requestFramePermissions": [],
   "majorCapabilities": [
     "MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"

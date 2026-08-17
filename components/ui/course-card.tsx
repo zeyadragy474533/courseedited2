@@ -90,27 +90,29 @@ export function CourseCard({ course, onEnroll }: CourseCardProps) {
         {/* Pricing and Action Footer */}
         <div className="mt-5 flex items-center justify-between gap-3 border-t border-slate-800/80 pt-3.5">
           <div>
-            <div className="flex items-baseline gap-2">
-              <span className="text-2xl font-black text-white">${course.price}</span>
-              <span className="text-xs text-slate-500 line-through">${course.originalPrice}</span>
+            <div className="flex items-baseline gap-1.5">
+              <span className="text-2xl font-black text-white">{course.price.toLocaleString("ar-EG")}</span>
+              <span className="text-xs font-bold text-sky-400">ج.م</span>
             </div>
-            <span className="text-[10px] font-semibold text-emerald-400">وفر ${course.originalPrice - course.price} اليوم!</span>
+            <span className="text-[10px] font-medium text-slate-400">تدريب عملي ومشاريع</span>
           </div>
 
           <div className="flex items-center gap-2">
             <Link
               href={`/courses/${course.id}`}
-              className="flex h-9 w-9 items-center justify-center rounded-xl border border-slate-700 bg-slate-800 text-slate-200 transition-colors hover:border-sky-500 hover:text-white"
-              title="تفاصيل الكورس"
+              className="inline-flex items-center gap-1.5 rounded-xl border border-slate-700 bg-slate-800/90 px-3.5 py-2 text-xs font-bold text-slate-200 transition-all hover:border-sky-500 hover:bg-slate-700 hover:text-white"
+              title="استعراض تفاصيل ومنهج الكورس"
             >
-              <ArrowUpRight className="h-4 w-4" />
+              <span>التفاصيل</span>
+              <ArrowUpRight className="h-3.5 w-3.5 text-sky-400" />
             </Link>
             <button
               type="button"
               onClick={() => onEnroll ? onEnroll(course) : null}
-              className="rounded-xl bg-gradient-to-r from-sky-500 to-blue-600 px-4 py-2 text-xs font-bold text-white shadow-lg shadow-sky-500/25 transition-all hover:scale-105 hover:shadow-sky-500/40 active:scale-95"
+              className="inline-flex items-center gap-1.5 rounded-xl bg-gradient-to-r from-sky-500 to-blue-600 px-4 py-2 text-xs font-bold text-white shadow-lg shadow-sky-500/25 transition-all hover:scale-105 hover:shadow-sky-500/40 active:scale-95"
             >
-              حجز ⚡
+              <Sparkles className="h-3.5 w-3.5 fill-current" />
+              <span>حجز 🚀</span>
             </button>
           </div>
         </div>

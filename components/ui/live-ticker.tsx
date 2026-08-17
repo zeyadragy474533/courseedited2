@@ -4,13 +4,13 @@ import { Flame, Zap, Trophy, ShieldCheck, Terminal, Code2, Users } from "lucide-
 
 export function LiveTicker() {
   const items = [
-    { icon: <Flame className="h-4 w-4 text-orange-400" />, text: "🔥 فتح باب الحجز لدفعة C++ و Unity الجديدة - المقاعد محدودة!" },
-    { icon: <Zap className="h-4 w-4 text-amber-400" />, text: "⚡ كود خصم إضافي 20%: NOVA20 متاح للمسجلين اليوم" },
-    { icon: <Trophy className="h-4 w-4 text-yellow-400" />, text: "🏆 تدريب مكثف على حل مشكلات ICPC & Codeforces" },
-    { icon: <Code2 className="h-4 w-4 text-sky-400" />, text: "💻 مشاريع عملية واقعية: محركات ألعاب + برامج عالية الأداء" },
-    { icon: <Users className="h-4 w-4 text-emerald-400" />, text: "👥 متابعة شخصية 1:1 مع كل طالب ومراجعة تفصيلية للكود" },
-    { icon: <ShieldCheck className="h-4 w-4 text-teal-400" />, text: "🎓 شهادة تخرج معتمدة بعد مناقشة مشروع التخرج النهائي" },
-    { icon: <Terminal className="h-4 w-4 text-indigo-400" />, text: "🧠 فهم حقيقي للـ RAM والـ Pointers والهندسة المعمارية" },
+    { icon: <Flame className="h-4 w-4 text-orange-400" />, text: "🔥 فتح باب الحجز لدفعة C++ و Scratch الجديدة - المقاعد محدودة!" },
+    { icon: <Zap className="h-4 w-4 text-amber-400" />, text: "⚡ تدريب عملي ومشاريع برمجية حقيقية خطوة بخطوة من الصفر" },
+    { icon: <Trophy className="h-4 w-4 text-yellow-400" />, text: "🏆 تدريب مكثف على حل مشكلات ICPC & Codeforces والتفكير المنطقي" },
+    { icon: <Code2 className="h-4 w-4 text-sky-400" />, text: "💻 مشاريع عملية واقعية: بناء خوارزميات وإدارة الذاكرة بكفاءة" },
+    { icon: <Users className="h-4 w-4 text-emerald-400" />, text: "👥 متابعة مستمرة واهتمام فردي مع كل طالب ومراجعة الأكواد" },
+    { icon: <ShieldCheck className="h-4 w-4 text-teal-400" />, text: "🎓 شهادة إتمام معتمدة بعد مناقشة مشروع التخرج النهائي" },
+    { icon: <Terminal className="h-4 w-4 text-indigo-400" />, text: "🧠 فهم حقيقي للـ RAM والـ Pointers ومفاهيم علوم الحاسب" },
   ];
 
   return (

@@ -30,7 +30,7 @@ export function SiteFooter() {
             </div>
 
             <p className="mt-4 text-xs leading-relaxed text-slate-400">
-              منصتكم الأولى لتعلم لغات البرمجة من الصفر حتى الاحتراف: C++, C#, Scratch, وتطوير المواقع، مع التركيز على بناء عقلية المبرمج والتطبيق العملي.
+              منصتكم الأولى لتعلم لغات البرمجة من الصفر حتى الاحتراف: C++ و Scratch، مع التركيز على بناء عقلية المبرمج والتطبيق العملي.
             </p>
 
             <div className="mt-5 flex items-center gap-3">
@@ -88,19 +88,15 @@ export function SiteFooter() {
             <ul className="mt-4 space-y-2.5 text-xs text-slate-400">
               <li className="flex items-center gap-1.5">
                 <span className="h-1.5 w-1.5 rounded-full bg-sky-400" />
-                <span>C++ & Problem Solving (Codeforces)</span>
+                <span>C++ Programming Masterclass</span>
               </li>
               <li className="flex items-center gap-1.5">
                 <span className="h-1.5 w-1.5 rounded-full bg-amber-400" />
                 <span>Scratch & Logic for Young Coders</span>
               </li>
               <li className="flex items-center gap-1.5">
-                <span className="h-1.5 w-1.5 rounded-full bg-purple-400" />
-                <span>C# & Unity Game Development</span>
-              </li>
-              <li className="flex items-center gap-1.5">
                 <span className="h-1.5 w-1.5 rounded-full bg-emerald-400" />
-                <span>Full-Stack Web Foundations (HTML/CSS/JS)</span>
+                <span>Problem Solving & Algorithms</span>
               </li>
             </ul>
           </div>

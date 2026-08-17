@@ -145,23 +145,23 @@ export function CourseDetailClient({ course, relatedCourses }: CourseDetailClien
                     category={course.category}
                     title={course.title}
                   />
-                  <div className="absolute top-3 right-3 rounded-full bg-emerald-500/90 px-3 py-1 text-xs font-black text-slate-950 shadow-lg z-20">
-                    خصم خاص متاح 🔥
+                  <div className="absolute top-3 right-3 rounded-full bg-sky-500/90 px-3 py-1 text-xs font-black text-slate-950 shadow-lg z-20">
+                    تدريب تطبيقي شامل ✨
                   </div>
                 </div>
 
                 {/* Price block */}
                 <div className="mt-6 flex items-baseline justify-between">
                   <div>
-                    <div className="flex items-baseline gap-3">
-                      <span className="text-4xl font-black text-white">${course.price}</span>
-                      <span className="text-lg text-slate-500 line-through">${course.originalPrice}</span>
+                    <div className="flex items-baseline gap-2">
+                      <span className="text-4xl font-black text-white">{course.price.toLocaleString("ar-EG")}</span>
+                      <span className="text-sm font-bold text-sky-400">جنيه مصري</span>
                     </div>
-                    <span className="text-xs font-bold text-emerald-400">وفر ${course.originalPrice - course.price} عند التسجيل الآن</span>
+                    <span className="text-xs font-medium text-slate-400">شامل المتابعة والتطبيقات العملية والمشروع النهائي</span>
                   </div>
 
                   <span className="rounded-full border border-sky-500/30 bg-sky-950/60 px-3 py-1 text-xs font-bold text-sky-300">
-                    كود: NOVA20
+                    حجز مقعد
                   </span>
                 </div>
 

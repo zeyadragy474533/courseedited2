@@ -4,6 +4,7 @@ export const novaCourseGallery = [
   {
     id: "gal-1",
     url: "/images/494224138_122149925132493821_3546896229289509441_n.jpg",
+    title: "معسكر C++ وتطبيقات الذاكرة الحية | Hands-on Coding",
     caption: "جلسات تدريب حية وتطبيق مباشر على لغة C++ ومؤشرات الذاكرة Pointers مع مراجعة الكود سطر بسطر مع المدربين.",
     category: "Coding",
     location: "Nova Tech Hub - المعادي",
@@ -13,6 +14,7 @@ export const novaCourseGallery = [
   {
     id: "gal-2",
     url: "/images/494451460_122149925342493821_6671575989079097046_n.jpg",
+    title: "العمل الجماعي وبناء منطق الألعاب | Team Logic & Games",
     caption: "تفاعل الطلاب وتطبيق التفكير الخوارزمي في بيئة عمل تشاركية ملهمة لبناء ألعاب حقيقية ونظم ذكية.",
     category: "Workshop",
     location: "Nova Innovation Lab",
@@ -22,6 +24,7 @@ export const novaCourseGallery = [
   {
     id: "gal-3",
     url: "/images/494524007_122149925024493821_2936548654072642787_n.jpg",
+    title: "التوجيه الفردي والإرشاد التقني | 1:1 Mentorship",
     caption: "متابعة شخصية مستمرة مع كل طالب ومراجعة دقيقة للأداء لضمان الاستيعاب الكامل والاحتراف البرمجي.",
     category: "Mentorship",
     location: "Nova Cairo Campus",
@@ -31,6 +34,7 @@ export const novaCourseGallery = [
   {
     id: "gal-4",
     url: "/images/494700826_122149925294493821_360724527126655574_n.jpg",
+    title: "عرض ومناقشة مشاريع التخرج | Capstone Showcase",
     caption: "الطلاب يشرحون خوارزميات مشاريعهم البرمجية وألعابهم المكتملة أمام لجنة التحكيم وزملائهم بثقة عالية.",
     category: "Projects",
     location: "Nova Demo Day",
@@ -40,6 +44,7 @@ export const novaCourseGallery = [
   {
     id: "gal-5",
     url: "/images/494730697_122149925192493821_2019700793460155445_n.jpg",
+    title: "صناع المستقبل والجيل البرمجي | Future Coders",
     caption: "أجواء الحماس والشغف بين أبطال Nova Technology وبناء صداقات تقنية تدوم مدى الحياة في بيئة تعليمية مميزة.",
     category: "Community",
     location: "Nova Community Arena",
@@ -49,6 +54,7 @@ export const novaCourseGallery = [
   {
     id: "gal-6",
     url: "/images/495024945_122149925408493821_6389513914891642268_n.jpg",
+    title: "حفل التكريم والشهادات المعتمدة | Certification",
     caption: "تسليم شهادات إتمام المعسكر التدريبي وتكريم الطلاب أصحاب المشاريع الأفضل والمبتكرة في الحفل السنوي.",
     category: "Awards",
     location: "Nova Annual Gala",
@@ -84,8 +90,8 @@ export interface Course {
   titleAr: string;
   brand: string;
   instructor: string;
-  level: "مبتدئ (Beginner)" | "متوسط (Intermediate)" | "متقدم (Advanced)" | "جميع المستويات (All Levels)";
-  category: "Systems & Core" | "Game Dev" | "Kids & Logic" | "Web & Cloud" | "AI & Data";
+  level: string;
+  category: "C++" | "Scratch";
   rating: number;
   reviewsCount: number;
   studentsCount: number;
@@ -98,6 +104,7 @@ export interface Course {
   coverImage: string;
   featured?: boolean;
   popular?: boolean;
+  createdAt?: string;
   tags: string[];
   features: string[];
   syllabus: CourseModule[];
@@ -107,31 +114,33 @@ export const allCourses: Course[] = [
   {
     id: "cpp-programming-course",
     title: "C++ Programming Masterclass: From Zero to Pro",
-    titleAr: "كورس لغة C++ الشامل: من الصفر إلى الاحتراف وبناء البرامج",
+    titleAr: "كورس لغة C++ الشامل: من الصفر إلى الاحتراف",
     brand: "Nova Technology",
     instructor: "م. حسام الدين & م. يوسف كمال",
-    level: "جميع المستويات (All Levels)",
-    category: "Systems & Core",
+    level: "من الصفر حتى الاحتراف",
+    category: "C++",
     rating: 4.9,
     reviewsCount: 342,
     studentsCount: 1250,
     duration: "8 أسابيع (48 ساعة تدريب)",
     price: 1000,
-    originalPrice: 1200,
+    originalPrice: 1500,
     lessonsCount: 24,
     coverImage: "/images/494224138_122149925132493821_3546896229289509441_n.jpg",
     featured: true,
     popular: true,
+    createdAt: "2024-08-10",
     tags: ["C++", "OOP", "Data Structures", "Problem Solving", "Algorithms", "Memory Management"],
     features: [
       "مشاريع حقيقية مع إدارة الذاكرة Pointers & References",
       "جلسات حل مسائل برمجية Problem Solving & Codeforces",
       "تطبيق عملي لمفاهيم البرمجة كائنية التوجه (OOP)",
       "شهادة معتمدة من Nova Technology ومراجعة كود فردية",
-      "بناء مشروع تخرج متكامل (Game Engine / Inventory System)"
+      "دعم مستمر وإرشاد تقني عبر مجتمع المنصة الخاص",
+      "بناء مشروع تخرج متكامل وتطبيقي"
     ],
     description:
-      "كورسات برمجة مش بس تعليم… دي تجربة كاملة!\n\nلقطات من أحد أقوى كورساتنا في لغة C++، واللي حولنا فيها البرمجة من حاجة معقدة لحاجة ممتعة وسهلة.\n\nطلابنا مش بس اتعلموا يكتبوا كود، دول بنوا مشاريع حقيقية، اشتغلوا في فرق، وخرجوا بفهم عملي للبرمجة المنطقية وإدارة الذاكرة، وبناء خوارزميات سريعة وفعالة.\n\nلو نفسك تتعلم برمجة بأسلوب عملي، تفاعلي، وواقعي – يبقى أنت في المكان الصح.\n\nتابعنا علشان تشوف أول بأول مواعيد الكورسات الجديدة في C++، Scratch، وغيرها من المستويات اللي بتناسب كل الأعمار.",
+      "كورسات برمجة مش بس تعليم… دي تجربة كاملة!\n\nلقطات من أحد أقوى كورساتنا في لغة C++، واللي حولنا فيها البرمجة من حاجة معقدة لحاجة ممتعة وسهلة.\n\nطلابنا مش بس اتعلموا يكتبوا كود، دول بنوا مشاريع حقيقية، اشتغلوا في فرق، وخرجوا بفهم عملي للبرمجة المنطقية وإدارة الذاكرة، وبناء خوارزميات سريعة وفعالة.\n\nلو نفسك تتعلم برمجة بأسلوب عملي، تفاعلي، وواقعي – يبقى أنت في المكان الصح.\n\nتابعنا علشان تشوف أول بأول مواعيد الكورسات في C++ و Scratch.",
     shortDescription:
       "تعلم لغة C++ من الصفر مع مشاريع عملية وتطبيقات واقعية، تفكير منطقي، وفهم عميق للـ OOP وهياكل البيانات.",
     syllabus: [
@@ -222,7 +231,7 @@ export const allCourses: Course[] = [
             titleAr: "الوراثة وتعدد الأشكال (Virtual Functions)",
             duration: "70 دقيقة",
             type: "project",
-            summary: "بناء نظام كامل لمحاكاة الكائنات في الألعاب والمشاريع الضخمة."
+            summary: "بناء نظام كامل لمحاكاة الكائنات في المشاريع البرمجية."
           }
         ]
       },
@@ -249,7 +258,7 @@ export const allCourses: Course[] = [
             titleAr: "تسليم ومناقشة مشروع التخرج",
             duration: "120 دقيقة",
             type: "project",
-            summary: "بناء نظام بنكي / محرك ألعاب ثنائي الأبعاد ومناقشته لايف."
+            summary: "بناء نظام إدارة بيانات / تطبيق متكامل ومناقشته لايف."
           }
         ]
       }
@@ -258,32 +267,33 @@ export const allCourses: Course[] = [
   {
     id: "scratch-kids-logic",
     title: "Scratch & Game Logic for Young Coders",
-    titleAr: "برمجة ألعاب وتفكير منطقي للأطفال والناشئين (Scratch)",
+    titleAr: "كورس برمجة الألعاب والتفكير المنطقي (Scratch)",
     brand: "Nova Technology",
     instructor: "م. سلمى طارق & فريق Nova Kids",
-    level: "مبتدئ (Beginner)",
-    category: "Kids & Logic",
+    level: "للأطفال والناشئين",
+    category: "Scratch",
     rating: 5.0,
     reviewsCount: 188,
     studentsCount: 820,
     duration: "6 أسابيع (24 ساعة تدريب)",
     price: 800,
-    originalPrice: 1000,
+    originalPrice: 1200,
     lessonsCount: 16,
     coverImage: "/images/494451460_122149925342493821_6671575989079097046_n.jpg",
     featured: true,
-    popular: false,
+    popular: true,
+    createdAt: "2024-07-01",
     tags: ["Scratch", "Game Dev", "Logic", "Animation", "Kids Coding"],
     features: [
-      "تصميم 10 ألعاب ممتعة ثنائية الأبعاد",
-      "تطوير التفكير التحليلي والإبداعي لدى الأطفال",
-      "جلسات تفاعلية ومسابقات أسبوعية شيقة",
-      "شهادة تكريم خاصة لكل بطل صغير"
+      "تصميم ألعاب تفاعلية ورسوم متحركة شيقة",
+      "تطوير التفكير التحليلي والإبداعي والمنطقي",
+      "جلسات تفاعلية ومشاريع ممتعة أسبوعياً",
+      "شهادة تكريم خاصة لكل طالب بعد إتمام المشروع"
     ],
     description:
-      "كورس مخصص للأطفال والناشئين من سن 8 إلى 16 سنة لتعليم أساسيات البرمجة من خلال بناء الألعاب والرسوم المتحركة التفاعلية باستخدام لغة سكراتش البصرية الممتعة.",
+      "كورس مخصص للأطفال والناشئين لتعليم أساسيات البرمجة والتفكير المنطقي من خلال بناء الألعاب والقصص التفاعلية باستخدام لغة سكراتش البصرية الممتعة.",
     shortDescription:
-      "تطوير مهارات التفكير المنطقي وبناء ألعاب تفاعلية ورسوم متحركة بأسلوب ممتع للأطفال والناشئين.",
+      "تطوير مهارات التفكير المنطقي وبناء ألعاب تفاعلية ورسوم متحركة بأسلوب ممتع وشيق.",
     syllabus: [
       {
         id: "sc-1",
@@ -322,106 +332,23 @@ export const allCourses: Course[] = [
             summary: "التحكم بلوحة المفاتيح وحساب النتيجة."
           }
         ]
-      }
-    ]
-  },
-  {
-    id: "csharp-unity-game-dev",
-    title: "C# & Unity Engine Game Development",
-    titleAr: "تطوير ألعاب الفيديو بلغة C# ومحرك Unity",
-    brand: "Nova Technology",
-    instructor: "م. أحمد الشافعي",
-    level: "متوسط (Intermediate)",
-    category: "Game Dev",
-    rating: 4.8,
-    reviewsCount: 210,
-    studentsCount: 640,
-    duration: "10 أسابيع (60 ساعة تدريب)",
-    price: 2500,
-    originalPrice: 3000,
-    lessonsCount: 28,
-    coverImage: "/images/494524007_122149925024493821_2936548654072642787_n.jpg",
-    featured: false,
-    popular: true,
-    tags: ["C#", "Unity 3D", "Physics", "2D/3D Games", "Game Design"],
-    features: [
-      "صناعة ألعاب 2D و 3D كاملة قابلة للنشر على Steam والموبايل",
-      "إتقان برمجة المؤثرات الصوتية والفيزيائية والذكاء الاصطناعي للأعداء",
-      "استخدام Git & GitHub لإدارة مشاريع الألعاب في فرق",
-      "نشر لعبة التخرج على منصة Itch.io ومشاركتها مع العالم"
-    ],
-    description:
-      "ادخل عالم صناعة ألعاب الفيديو الاحترافي! تعلم لغة C# المتطورة وكيفية استخدام محرك Unity الشهير لبناء ألعاب متكاملة ذات مؤثرات بصرية وصوتية ممتازة.",
-    shortDescription:
-      "اصنع ألعابك الخاصة من الفكرة إلى الإطلاق باستخدام C# ومحرك Unity الرائد عالمياً.",
-    syllabus: [
+      },
       {
-        id: "cs-1",
-        moduleNumber: 1,
-        title: "C# Foundations for Game Devs",
-        titleAr: "أساسيات C# الخاصة بالألعاب",
-        duration: "الأسبوع 1-3",
-        lessonsCount: 8,
-        description: "المتغيرات، الدوال، الكلاسات، والـ Events في C#.",
+        id: "sc-3",
+        moduleNumber: 3,
+        title: "Variables, Scores & Final Game Project",
+        titleAr: "المتغيرات والنقاط ومشروع اللعبة النهائي",
+        duration: "الأسبوع 5-6",
+        lessonsCount: 6,
+        description: "بناء لعبة متكاملة بالمراحل وحساب النقاط ومشاركتها.",
         lessons: [
           {
-            id: "cs-1-1",
-            title: "C# Syntax & Unity Scripting Lifecycle",
-            titleAr: "دورة حياة السكربت (Awake, Start, Update)",
-            duration: "55 دقيقة",
-            type: "video",
-            summary: "فهم كيفية تحديث الفريمات وإدخال اللاعبين."
-          }
-        ]
-      }
-    ]
-  },
-  {
-    id: "web-development-frontend",
-    title: "Full-Stack Web Foundations (HTML, CSS & JavaScript)",
-    titleAr: "أساسيات تطوير الويب والواجهات التفاعلية الحديثة",
-    brand: "Nova Technology",
-    instructor: "م. عمر خالد",
-    level: "مبتدئ (Beginner)",
-    category: "Web & Cloud",
-    rating: 4.9,
-    reviewsCount: 295,
-    studentsCount: 980,
-    duration: "8 أسابيع (40 ساعة تدريب)",
-    price: 2200,
-    originalPrice: 2800,
-    lessonsCount: 20,
-    coverImage: "/images/494700826_122149925294493821_360724527126655574_n.jpg",
-    featured: false,
-    popular: false,
-    tags: ["HTML5", "CSS3", "JavaScript", "Tailwind", "Responsive Design"],
-    features: [
-      "بناء أكثر من 6 مواقع تفاعلية متوافقة مع كل الشاشات",
-      "إتقان أساسيات JavaScript والـ DOM Manipulation الحديثة",
-      "نشر المواقع على الإنترنت مجاناً باستخدام Vercel و Netlify",
-      "جلسات كود لايف وبناء Dashboard ومتاجر إلكترونية حقيقية"
-    ],
-    description:
-      "انطلق في عالم الويب الواسع! تعلم كيفية بناء صفحات ويب سريعة، جذابة، ومتجاوبة تماماً باستخدام أحدث تقنيات HTML5 و CSS الحديث مع أساسيات JavaScript القوية.",
-    shortDescription:
-      "انطلق في عالم تصميم وتطوير المواقع والواجهات الحديثة والتفاعلية بأسهل طريقة.",
-    syllabus: [
-      {
-        id: "web-1",
-        moduleNumber: 1,
-        title: "Semantic HTML5 & Modern CSS3 Layouts",
-        titleAr: "بناء الهيكل والتصميم باستخدام Flexbox & Grid",
-        duration: "الأسبوع 1-4",
-        lessonsCount: 10,
-        description: "إنشاء صفحات ويب منظمة وجذابة من الصفر.",
-        lessons: [
-          {
-            id: "web-1-1",
-            title: "Modern Layouts with Flexbox & CSS Grid",
-            titleAr: "تصميم التخطيطات المعقدة والمتجاوبة",
+            id: "sc-3-1",
+            title: "Final Game Project Presentation",
+            titleAr: "عرض ومناقشة اللعبة المكتملة",
             duration: "60 دقيقة",
-            type: "lab",
-            summary: "بناء صفحات Responsive وتوافق الموبايل."
+            type: "project",
+            summary: "عرض المشروع والتكريم وتوزيع الشهادات."
           }
         ]
       }
@@ -436,7 +363,7 @@ export const studentReviews = [
     id: "rev-1",
     name: "كريم عبد العزيز",
     role: "طالب هندسة حاسبات",
-    course: "C++ Programming Masterclass",
+    course: "C++ Masterclass",
     avatar: "👨‍💻",
     rating: 5,
     date: "منذ أسبوعين",
@@ -456,20 +383,20 @@ export const studentReviews = [
   },
   {
     id: "rev-3",
-    name: "محمد طارق",
-    role: "مطور ألعاب مستقل",
-    course: "C# & Unity Engine",
-    avatar: "🎮",
+    name: "ياسين محمود",
+    role: "بطل برمجة صغير (11 سنة)",
+    course: "Scratch & Logic",
+    avatar: "🚀",
     rating: 5,
     date: "منذ شهر",
     comment:
-      "التطبيقات العملية والمتابعة الفردية في Nova Technology مشوفتش زيها في أي مكان تاني. بنيت مشروعي ورفعته على بورتفوليو وجالي منه أول فرصة عمل فريلانس."
+      "اتعلمت إزاي أعمل ألعاب وقصص متحركة بنفسي، والمدربين كانوا بيساعدوني خطوة بخطوة لما وقفت في كود الحركة. تجربة ممتازة!"
   },
   {
     id: "rev-4",
     name: "نور الدين سامي",
-    role: "طالب ثانوية عامة",
-    course: "C++ Programming Masterclass",
+    role: "طالب جامعي",
+    course: "C++ Masterclass",
     avatar: "⚡",
     rating: 5,
     date: "منذ شهرين",
@@ -479,15 +406,16 @@ export const studentReviews = [
 ];
 
 export const platformStats = [
-  { number: "40", label: "طالب خريج", sub: "Graduated Students", icon: "Users" },
+  { number: "+1,250", label: "طالب خريج", sub: "Graduated Students", icon: "Users" },
   { number: "98%", label: "نسبة الرضا والنجاح", sub: "Satisfaction Rate", icon: "Award" },
-  { number: "3+", label: "مشروع عملي تخرج", sub: "Real Capstone Projects", icon: "Code2" }
+  { number: "+85", label: "مشروع عملي تخرج", sub: "Real Capstone Projects", icon: "Code2" },
+  { number: "24/7", label: "دعم فني ومجتمع نشط", sub: "Active Tech Community", icon: "Sparkles" }
 ];
 
 export const faqItems = [
   {
     question: "هل أحتاج أي خبرة سابقة في البرمجة قبل الاشتراك؟",
-    answer: "إطلاقاً! دوراتنا مصممة لتبدأ معك من الصفر خطوة بخطوة مع شروحات مفصلة، أمثلة توضيحية، ومشاريع تبدأ من المستوى المبتدئ وتتدرج حتى الاحتراف."
+    answer: "إطلاقاً! دوراتنا في C++ و Scratch مصممة لتبدأ معك من الصفر خطوة بخطوة مع شروحات مفصلة، أمثلة توضيحية، ومشاريع تبدأ من الأساسيات وتتدرج حتى الاحتراف."
   },
   {
     question: "هل أحصل على شهادة معتمدة بعد إنهاء الكورس؟",
@@ -495,10 +423,10 @@ export const faqItems = [
   },
   {
     question: "كيف تتم المتابعة وحل المشاكل مع المدربين؟",
-    answer: "نوفر مجتمعاً تفاعلياً خاصاً على Discord و Telegram مع جلسات Office Hours أسبوعية لايف لمراجعة الكود، وحل المشكلات، والإجابة عن كل الاستفسارات."
+    answer: "نوفر متابعة مستمرة وجلسات أسبوعية لايف لمراجعة الكود، وحل المشكلات، والإجابة عن كل الاستفسارات."
   },
   {
     question: "هل الدروس مسجلة أم جلسات تفاعلية حية (Live)؟",
-    answer: "المعسكرات تجمع بين ورش العمل التفاعلية المباشرة (Live Coding) وبين المحتوى المسجل عالي الجودة والملفات البرمجية للرجوع إليها في أي وقت مدى الحياة."
+    answer: "المعسكرات تجمع بين ورش العمل التفاعلية المباشرة (Live Coding) وبين التطبيقات العملية والملفات البرمجية للرجوع إليها في أي وقت."
   }
 ];
